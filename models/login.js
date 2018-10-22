@@ -7,6 +7,6 @@ const loginSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Login = mongoose.model("User", loginSchema);
+const Login = mongoose.model("Login", loginSchema);
 
 module.exports = Login;
