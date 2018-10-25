@@ -1,12 +1,32 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header" />
-      </div>
+      <React.Fragment>
+        <div className="content">
+          <div className="header__text-box">
+            <Link
+              onClick={this.toggleFragment}
+              className="btn btn--white btn--animated"
+              to={"/"}
+            >
+              Login
+            </Link>
+            <Link
+              onClick={this.toggleFragment}
+              className="btn btn--white btn--animated"
+              to={"/"}
+            >
+              Register
+            </Link>
+          </div>
+        </div>
+        {this.props.children}
+      </React.Fragment>
     );
   }
 }
