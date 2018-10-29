@@ -17,6 +17,16 @@ class Chat extends React.Component {
       message: ""
     };
   }
+  setUsername(username, e) {
+    this.setState(
+      {
+        username: username
+      },
+      () => {
+        this.initChat();
+      }
+    );
+  }
 
   componentDidMount() {
     if (this.state.username.length) {

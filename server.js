@@ -39,3 +39,32 @@ app.get("/", (req, res) => {
 server.listen(port, () => {
   console.log("Running server on 127.0.0.1:" + port);
 });
+
+let users = {};
+
+getUsers = () => {
+  return Object.keys(users).map(function(key) {
+    return users[key].username;
+  });
+};
+
+io.on("connection", socket => {
+  let query = socket.request._query,
+    user = {
+      username: query.username,
+      uid: query.uid,
+      socket_id: socket.id
+    };
+
+  if (users[user.uid] !== undefined) {
+    createSocket(user);
+    socket.emit("updateUsersList", getUsers());
+  } else {
+    createUser(user);
+    io.emit("updateUsersList", getUsers());
+  }
+  socket.on("disconnect", () => {
+    removeSocket(socket.id);
+    io.emit("updateUsersList", getUsers());
+  });
+});
