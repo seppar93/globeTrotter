@@ -23,6 +23,13 @@ class App extends Component {
             >
               Register
             </Link>
+            <Link
+              onClick={this.toggleFragment}
+              className="btn btn--white btn--animated"
+              to={"/"}
+            >
+              Chat
+            </Link>
           </div>
         </div>
         {this.props.children}
