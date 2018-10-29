@@ -17,10 +17,37 @@ class Chat extends React.Component {
       message: ""
     };
   }
+
   componentDidMount() {
     if (this.state.username.length) {
-      this.iniChat();
+      this.initChat();
     }
+  }
+  initChat() {
+    this.setState({
+      chat_ready: true
+    });
+    this.socket = socketIOClient("ws://localhost:8989", {
+      query: `username=${this.state.username}&id=${this.state.id}`
+    });
+    this.socket.on(
+      "updateUsersList",
+      function(users) {
+        console.log(users);
+        this.setState({
+          users: users
+        });
+      }.bind(this)
+    );
+    this.socket.on(
+      "message",
+      function(message) {
+        this.setState({
+          messages: this.state.messages.concat([message])
+        });
+        this.scrollToBottom();
+      }.bind(this)
+    );
   }
 }
 
