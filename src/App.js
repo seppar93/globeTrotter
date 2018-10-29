@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./components/layout/NavBar.js";
 
 import "./App.css";
 
@@ -9,6 +10,7 @@ class App extends Component {
       <React.Fragment>
         <div className="content">
           <div className="header__text-box">
+            <Navbar />
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"

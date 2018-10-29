@@ -25,7 +25,7 @@ class Navbar extends React.Component {
               <a
                 className="nav-link"
                 target="_blank"
-                href="https://github.com/waleedahmad"
+                href="https://github.com/seppar93/globeTrotter"
               >
                 Github
               </a>
