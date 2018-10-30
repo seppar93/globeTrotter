@@ -1,0 +1,112 @@
+.mainBtnType {
+  color:rgb(54, 53, 53);  
+
+  background-color: rgb(41, 240, 157);
+
+  border: 2px solid rgb(7, 161, 123);
+  
+  float: right;
+}
+
+.pastandFutureTrips {
+  border: 5px solid white;
+  margin-left: 800px;
+  height: 300px;
+  width: 200px;
+}
+
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+}
+
+.navigBar {
+  background: url('../images/globetrotbackground.png');
+}
+
+header.mainContentContainerForPage {
+  position: relative;
+  background: url('../images/globetrotbackground.png') no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.mainContentContainerForPage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.mainContentContainerForPage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.mainContentContainerForPage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.mainContentContainerForPage h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  bafkground-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.searchArea {
+  background: url('../images.globetrotbackground.png');
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: url('../images/globetrotbackground.png')
+}
