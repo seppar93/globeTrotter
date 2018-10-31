@@ -8,7 +8,7 @@ class Users extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, prevProps) {
+  static getDerivedStateFromProps(nextProps, prevState) {
     return {
       users: nextProps.users
     };
@@ -30,4 +30,5 @@ class Users extends React.Component {
     );
   }
 }
+
 export default Users;

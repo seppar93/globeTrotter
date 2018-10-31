@@ -140,8 +140,8 @@ class GifBox extends React.Component {
               return (
                 <div className="gif" key={i}>
                   <i
-                    className="fa
-                                    fa-share-square share"
+                    className="fa 
+                    fa-share-square share"
                     onClick={this.sendGIF.bind(this, gif)}
                   />
                   <img src={gif.fixed} alt="" />

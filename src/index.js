@@ -4,13 +4,13 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import EnterChat from "./components/EnterChat";
+import Chat from "./components/Chat";
 
 ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={App} />
-      <Route path="/App/EnterChat" component={EnterChat} />
+      <Route path="/App/Chat" component={Chat} />
       {/* <Route path="/" component={} /> */}
       {/* <Route path="/" component={} /> */}
     </div>
