@@ -7,16 +7,17 @@ class ChatBox extends React.Component {
       message: ""
     };
   }
-  onChange(event) {
+
+  onChange(e) {
     this.setState({
-      message: event.target.value
+      message: e.target.value
     });
   }
 
-  onKeyUp(event) {
-    if (event.key === "Enter") {
+  onKeyUp(e) {
+    if (e.key === "Enter") {
       if (this.state.message.length) {
-        this.props.sendMesage({
+        this.props.sendMessage({
           type: "message",
           text: this.state.message
         });

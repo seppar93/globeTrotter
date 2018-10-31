@@ -8,18 +8,18 @@ class EnterChat extends React.Component {
     };
   }
 
-  changeUsername(event) {
-    event.preventDfault();
+  changeUsername(e) {
+    e.preventDefault();
     if (this.state.username.length) {
       this.props.setUsername(this.state.username);
     } else {
-      alert("Please Provide a username");
+      alert("Please provide a username");
     }
   }
 
-  onChange(event) {
+  onChange(e) {
     this.setState({
-      username: event.target.value
+      username: e.target.value
     });
   }
 
@@ -50,4 +50,5 @@ class EnterChat extends React.Component {
     );
   }
 }
+
 export default EnterChat;

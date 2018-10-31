@@ -32,14 +32,6 @@ const port = 8989;
 
 app.use("/assets", express.static(__dirname + "/dist"));
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
-server.listen(port, () => {
-  console.log("Running server on 127.0.0.1:" + port);
-});
-
 let users = {};
 
 getUsers = () => {
@@ -99,6 +91,14 @@ removeSocket = socket_id => {
   }
 };
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
+server.listen(port, () => {
+  console.log("Running server on 127.0.0.1:" + port);
+});
+
 io.on("connection", socket => {
   let query = socket.request._query,
     user = {
@@ -114,6 +114,16 @@ io.on("connection", socket => {
     createUser(user);
     io.emit("updateUsersList", getUsers());
   }
+
+  socket.on("message", data => {
+    console.log(data);
+    socket.broadcast.emit("message", {
+      username: data.username,
+      message: data.message,
+      uid: data.uid
+    });
+  });
+
   socket.on("disconnect", () => {
     removeSocket(socket.id);
     io.emit("updateUsersList", getUsers());
