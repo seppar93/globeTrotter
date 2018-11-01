@@ -5,14 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Chat from "./components/Chat";
+import Login from "./components/auth/Login.js";
+import Register from "./components/auth/Register.js";
 
 ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={App} />
       <Route path="/App/Chat" component={Chat} />
-      {/* <Route path="/App/Register" component={} /> */}
-      {/* <Route path="/" component={} /> */}
+      <Route path="/App/Register" component={Register} />
+      <Route path="/App/Login" component={Login} />
     </div>
   </Router>,
   document.getElementById("root")

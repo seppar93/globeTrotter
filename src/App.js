@@ -3,6 +3,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 import Navbar from "./components/layout/NavBar.js";
 import ChatBox from "./components/ChatBox";
+import Register from "./components/auth/Register.js";
 
 class App extends Component {
   render() {
@@ -13,14 +14,14 @@ class App extends Component {
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/Chat"}
+              to={"/app/login"}
             >
               Login
             </Link>
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/"}
+              to={"/app/register"}
             >
               Register
             </Link>
