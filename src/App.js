@@ -1,9 +1,8 @@
 import React, { Component } from "react";
+import "./App.css";
 import { Link } from "react-router-dom";
 import Navbar from "./components/layout/NavBar.js";
 import ChatBox from "./components/ChatBox";
-
-import "./App.css";
 
 class App extends Component {
   render() {
@@ -14,7 +13,7 @@ class App extends Component {
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/"}
+              to={"/Chat"}
             >
               Login
             </Link>
@@ -28,7 +27,7 @@ class App extends Component {
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/"}
+              to={"/app/chat"}
             >
               Chat
             </Link>

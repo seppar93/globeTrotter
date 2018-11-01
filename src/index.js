@@ -11,7 +11,7 @@ ReactDOM.render(
     <div>
       <Route exact path="/" component={App} />
       <Route path="/App/Chat" component={Chat} />
-      {/* <Route path="/" component={} /> */}
+      {/* <Route path="/App/Register" component={} /> */}
       {/* <Route path="/" component={} /> */}
     </div>
   </Router>,

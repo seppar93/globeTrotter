@@ -3,6 +3,7 @@ import Users from "./Users";
 import Messages from "./Messages";
 import EnterChat from "./EnterChat";
 import socketIOClient from "socket.io-client";
+// import "./Chat.css";
 
 class Chat extends React.Component {
   constructor(props) {
