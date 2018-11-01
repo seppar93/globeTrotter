@@ -3,6 +3,7 @@ import Users from "./Users";
 import Messages from "./Messages";
 import EnterChat from "./EnterChat";
 import socketIOClient from "socket.io-client";
+import NavBar from "./layout/NavBar.js";
 // import "./Chat.css";
 
 class Chat extends React.Component {
@@ -110,6 +111,7 @@ class Chat extends React.Component {
       <div className="chat">
         {this.state.chat_ready ? (
           <React.Fragment>
+            <NavBar />
             <Users users={this.state.users} />
             <Messages
               sendMessage={this.sendMessage.bind(this)}
