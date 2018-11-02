@@ -119,6 +119,20 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    /* beginig of animation */
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translate(0); /* nothing changes */
+  }
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -130,6 +144,7 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
+
 .btn:hover {
   transform: translateY(-3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
