@@ -84,6 +84,41 @@ body {
   letter-spacing: 1.75rem;
   animation: moveInRight 1s ease-out;
 }
+
+@keyframes moveInLeft {
+  0% {
+    /* beginig of animation */
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translate(0); /* nothing changes */
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    /* beginig of animation */
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translate(0); /* nothing changes */
+  }
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
