@@ -9,19 +9,26 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="content">
-          <div className="header__text-box">
+        <header class="header">
+          <div class="header__logo-box">
+            {/* <img src="img/logo-white.png" alt="Logo" class="header__logo" /> */}
+          </div>
+          <div class="header__text-box">
+            <h1 class="heading-primary">
+              <span class="heading-primary--main">Travel</span>
+              <span class="heading-primary--sub"> is where life happens</span>
+            </h1>
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/app/Login"}
+              to={"/app/login"}
             >
               Login
             </Link>
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/app/Register"}
+              to={"/app/register"}
             >
               Register
             </Link>
@@ -33,8 +40,7 @@ class App extends Component {
               Chat
             </Link>
           </div>
-        </div>
-        {this.props.children}
+        </header>
       </React.Fragment>
     );
   }
