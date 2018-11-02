@@ -15,8 +15,8 @@ class App extends Component {
           </div>
           <div class="header__text-box">
             <h1 class="heading-primary">
-              <span class="heading-primary--main">Outdoors</span>
-              <span class="heading-primary--sub">is where life happens</span>
+              <span class="heading-primary--main">Travel</span>
+              <span class="heading-primary--sub"> is where life happens</span>
             </h1>
             <Link
               onClick={this.toggleFragment}
