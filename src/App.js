@@ -14,14 +14,14 @@ class App extends Component {
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/app/login"}
+              to={"/app/Login"}
             >
               Login
             </Link>
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
-              to={"/app/register"}
+              to={"/app/Register"}
             >
               Register
             </Link>

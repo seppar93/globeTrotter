@@ -1,9 +1,28 @@
 import React, { Component } from "react";
+import API from "../../utilis/API"
 
-class Login extends Component {
+class Register extends Component {
   state = {
-    email: "",
-    password: ""
+    email: " ",
+    password: " "
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+        [name]: value,
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.email && this.state.password) {
+        API.saveUser({
+        email: this.state.email,
+        password: this.state.password,
+        })
+        .catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -26,7 +45,7 @@ class Login extends Component {
                     name="email"
                     required
                     value={this.state.email}
-                    onChange={this.onChange}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="form-group">
@@ -37,13 +56,15 @@ class Login extends Component {
                     name="password"
                     required
                     value={this.state.password}
-                    onChange={this.onChange}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <input
                   type="submit"
                   value="Register"
                   className="btn btn-primary btn-block"
+                  disabled={!(this.state.email && this.state.password)}
+                  onClick={this.handleFormSubmit}
                 />
               </form>
             </div>
@@ -54,4 +75,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
