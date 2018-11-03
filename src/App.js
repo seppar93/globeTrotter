@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
-import Navbar from "./components/layout/NavBar.js";
-import ChatBox from "./components/ChatBox";
-import Register from "./components/auth/Register.js";
+// import Navbar from "./components/layout/NavBar.js";
+// import ChatBox from "./components/Chat/ChatBox";
+// import Register from "./components/auth/Register.js";
 
 class App extends Component {
   render() {
