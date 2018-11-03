@@ -7,6 +7,9 @@ import ChatBox from "./components/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
+// import Navbar from "./components/layout/NavBar.js";
+// import ChatBox from "./components/Chat/ChatBox";
+// import Register from "./components/auth/Register.js";
 
 class App extends Component {
 
@@ -81,6 +84,7 @@ class App extends Component {
         />
 
             {/* <Link
+            <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
               to={"/app/login"}
