@@ -1,19 +1,65 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
 class Login extends Component {
-  state = {
-    email: "",
-    password: ""
-  };
+  constructor() {
+    super()
+    this.state = {
+      username: '',
+      password: '',
+      redirectTo: null
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
-  // onSubmit = e => {
-  // };
+  }
 
-  // onChange = e => this.setState({ [e.target.name]: e.target.value });
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    console.log('handleSubmit')
+    console.log(this.state.username)
+    console.log(this.state.password)
+    
+
+    axios
+      .post('/user/login', {
+        username: this.state.username,
+        password: this.state.password,
+      })
+      .then(response => {
+        console.log('login response: ')
+        console.log(response)
+        if (response.status === 200) {
+          // update App.js state
+          this.props.updateUser({
+            loggedIn: true,
+            username: response.data.username
+          })
+          // update the state to redirect to home
+          this.setState({
+            redirectTo: '/'
+          })
+        }
+      }).catch(error => {
+        console.log('login error: ')
+        console.log(error);
+
+      })
+  }
 
   render() {
-    return (
-      <div className="row">
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />
+    } else {
+      return (
+        <div className="row">
         <div className="col-md-6 mx-auto">
           <div className="card">
             <div className="card-body">
@@ -30,8 +76,8 @@ class Login extends Component {
                     className="form-control"
                     name="email"
                     required
-                    value={this.state.email}
-                    onChange={this.onChange}
+                    value={this.state.username}
+                    onChange={this.handleChange}
                   />
                 </div>
                 <div className="form-group">
@@ -42,13 +88,14 @@ class Login extends Component {
                     name="password"
                     required
                     value={this.state.password}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                   />
                 </div>
                 <input
                   type="submit"
                   value="Login"
                   className="btn btn-primary btn-block"
+                  onClick={this.handleSubmit}
                 />
               </form>
             </div>
@@ -57,6 +104,7 @@ class Login extends Component {
       </div>
     );
   }
+}
 }
 
 export default Login;
