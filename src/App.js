@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from 'axios'
 import { Route, Link } from "react-router-dom";
-import Navbar from "./components/layout/NavBar.js";
-import ChatBox from "./components/ChatBox";
+// import Navbar from "./components/layout/NavBar.js";
+import ChatBox from "./components/Chat/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
@@ -57,11 +57,11 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
-        {this.state.loggedIn &&
+        {/* {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
-        }
+        } } */}
 
         <header class="header">
           <div class="header__logo-box">
@@ -75,15 +75,15 @@ class App extends Component {
             <Route
           exact path="/"
           component={Home} />
-        <Route
+        {/* <Route
           path="/login"
           render={() =>
             <Login
               updateUser={this.updateUser}
             />}
-        />
+        /> */}
 
-            {/* <Link
+            
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
@@ -94,7 +94,7 @@ class App extends Component {
                 />}
             >
               Login
-            </Link> */}
+            </Link>
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
