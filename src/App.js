@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import Navbar from "./components/layout/NavBar.js";
 import ChatBox from "./components/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
+import Home from "./components/auth/index.js";
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
     this.getUser()
   }
 
-  updateUser (userObject) {
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -68,7 +69,18 @@ class App extends Component {
               <span class="heading-primary--main">Travel</span>
               <span class="heading-primary--sub"> is where life happens</span>
             </h1>
-            <Link
+            <Route
+          exact path="/"
+          component={Home} />
+        <Route
+          path="/login"
+          render={() =>
+            <Login
+              updateUser={this.updateUser}
+            />}
+        />
+
+            {/* <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
               to={"/app/login"}
@@ -78,13 +90,13 @@ class App extends Component {
                 />}
             >
               Login
-            </Link>
+            </Link> */}
             <Link
               onClick={this.toggleFragment}
               className="btn btn--white btn--animated"
               to={"/app/register"}
               render={() =>
-                <Register/>}
+                <Register />}
             >
               Register
             </Link>

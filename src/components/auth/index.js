@@ -1,5 +1,5 @@
-export * from "./Register.js";
-export * from "./Login.js";
+// export * from "./Register.js";
+// export * from "./Login.js";
 
 import React, { Component } from 'react'
 
