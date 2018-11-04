@@ -1,14 +1,55 @@
 import React, { Component } from "react";
+import axios from 'axios'
+import API from "../../utilis/API"
 
-class Login extends Component {
-  state = {
-    email: "",
-    password: ""
-  };
+class Register extends Component {
+  constructor() {
+		super()
+		this.state = {
+			username: '',
+			password: '',
+			confirmPassword: '',
 
-  render() {
-    return (
-      <div className="row">
+		}
+		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleChange = this.handleChange.bind(this)
+	}
+	handleChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+	handleSubmit(event) {
+		console.log('sign-up handleSubmit, username: ')
+		console.log(this.state.username)
+		event.preventDefault()
+
+		//request to server to add a new username/password
+		axios.post('/user/', {
+			username: this.state.username,
+			password: this.state.password
+		})
+			.then(response => {
+				console.log(response)
+				if (!response.data.errmsg) {
+					console.log('successful signup')
+					this.setState({ //redirect to login page
+						redirectTo: '/app/login'
+					})
+				} else {
+					console.log('username already taken')
+				}
+			}).catch(error => {
+				console.log('signup error: ')
+				console.log(error)
+
+			})
+	}
+
+
+render() {
+	return (
+		<div className="row">
         <div className="col-md-6 mx-auto">
           <div className="card">
             <div className="card-body">
@@ -25,8 +66,8 @@ class Login extends Component {
                     className="form-control"
                     name="email"
                     required
-                    value={this.state.email}
-                    onChange={this.onChange}
+                    value={this.state.username}
+                    onChange={this.handleChange}
                   />
                 </div>
                 <div className="form-group">
@@ -37,13 +78,14 @@ class Login extends Component {
                     name="password"
                     required
                     value={this.state.password}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                   />
                 </div>
                 <input
                   type="submit"
                   value="Register"
                   className="btn btn-primary btn-block"
+                  onClick={this.handleSubmit}
                 />
               </form>
             </div>
@@ -54,4 +96,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
