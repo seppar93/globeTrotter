@@ -3,13 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-<<<<<<< HEAD
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Chat from "./components/Chat/Chat";
-=======
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Chat from "./components/Chat/Chat.js";
->>>>>>> 9c61f38250da1f9b74aa14b174362727aaf4ec9d
 import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 
