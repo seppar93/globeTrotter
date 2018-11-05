@@ -143,7 +143,7 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-.btn:hover {
+/* .btn:hover {
   transform: translateY(-3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
@@ -153,10 +153,10 @@ body {
 }
 .btn--white {
   background-color: #ffffff;
-  color: #777;
-}
-.btn::after {
-  content: ""; /* you have to specficy*/
+  color: #777; 
+}*/
+/* .btn::after {
+  content: ""; /* you have to specficy
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -166,16 +166,16 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-}
-.btn--white::after {
+} */
+/* .btn--white::after {
   background-color: #ffffff;
 }
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
-}
-
+} */
+/* 
 .btn--animated {
   animation: moveInBottom 0.5s ease-in-out 0.75s;
   animation-fill-mode: backwards;
-}
+} */
