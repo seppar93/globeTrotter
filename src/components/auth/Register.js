@@ -64,7 +64,9 @@ render() {
                   <input
                     type="text"
                     className="form-control"
-                    name="email"
+					id="username"
+					name="username"
+					placeholder="Username"
                     required
                     value={this.state.username}
                     onChange={this.handleChange}
