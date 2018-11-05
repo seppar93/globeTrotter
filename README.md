@@ -27,6 +27,13 @@ In production
 <b>Built with</b>
 
 - [React](https://reactjs.org/)
+- [Socket.IO](https://socket.io/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [MongoDB](https://www.mongodb.com/)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [Sass](https://sass-lang.com/)
+- [jquery](https://jquery.com)
+- [Express](https://expressjs.com/)
 
 ## Features
 
@@ -42,7 +49,8 @@ In production
 
 ## API Reference
 
-In production
+- [Google Maps API](https://developers.google.com/maps/documentation/)
+- [Calendar API](https://developers.google.com/calendar/)
 
 ## Tests
 
