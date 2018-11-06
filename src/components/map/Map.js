@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
+var newvariable;
 class Map extends Component {
     render() {
         const GoogleMapExample = withGoogleMap(props => (
@@ -20,3 +21,7 @@ class Map extends Component {
    }
 };
 export default Map;
+
+
+
+
