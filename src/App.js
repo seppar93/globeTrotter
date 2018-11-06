@@ -1,57 +1,57 @@
 import React, { Component } from "react";
 import "./App.css";
-import axios from 'axios'
+import axios from "axios";
 import { Route, Link } from "react-router-dom";
 // import Navbar from "./components/layout/NavBar.js";
 import ChatBox from "./components/Chat/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
+import Navbar from "./components/layout/NavBar";
 // import Navbar from "./components/layout/NavBar.js";
 // import ChatBox from "./components/Chat/ChatBox";
 // import Register from "./components/auth/Register.js";
 
 class App extends Component {
-
   constructor() {
-    super()
+    super();
     this.state = {
       loggedIn: false,
       username: null
-    }
+    };
 
-    this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateUser = this.updateUser.bind(this)
+    this.getUser = this.getUser.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   componentDidMount() {
-    this.getUser()
+    this.getUser();
   }
 
   updateUser(userObject) {
-    this.setState(userObject)
+    this.setState(userObject);
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+    axios.get("/user/").then(response => {
+      console.log("Get user response: ");
+      console.log(response.data);
       if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ')
+        console.log("Get User: There is a user saved in the server session: ");
 
         this.setState({
           loggedIn: true,
           username: response.data.user.username
-        })
+        });
       } else {
-        console.log('Get user: no user');
+        console.log("Get user: no user");
         this.setState({
           loggedIn: false,
           username: null
-        })
+        });
       }
-    })
+    });
   }
 
   render() {
@@ -62,20 +62,22 @@ class App extends Component {
         {/* {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         } } */}
+        <Navbar />
 
-        <header class="header">
-          <div class="header__logo-box">
+        <header className="header">
+          <div className="header__logo-box">
             {/* <img src="img/logo-white.png" alt="Logo" class="header__logo" /> */}
           </div>
-          <div class="header__text-box">
-            <h1 class="heading-primary">
-              <span class="heading-primary--main">Travel</span>
-              <span class="heading-primary--sub"> is where life happens</span>
+          <div className="header__text-box">
+            <h1 className="heading-primary">
+              <span className="heading-primary--main">Travel</span>
+              <span className="heading-primary--sub">
+                {" "}
+                is where life happens
+              </span>
             </h1>
-            <Route
-          exact path="/"
-          component={Home} />
-        {/* <Route
+            <Route exact path="/" component={Home} />
+            {/* <Route
           path="/login"
           render={() =>
             <Login
@@ -83,30 +85,25 @@ class App extends Component {
             />}
         /> */}
 
-            
             <Link
               onClick={this.toggleFragment}
-              className="btn btn--white btn--animated"
+              className="button button--white button--animated"
               to={"/app/login"}
-              render={() =>
-                <Login
-                  updateUser={this.updateUser}
-                />}
+              render={() => <Login updateUser={this.updateUser} />}
             >
               Login
             </Link>
             <Link
               onClick={this.toggleFragment}
-              className="btn btn--white btn--animated"
+              className="button button--white button--animated"
               to={"/app/register"}
-              render={() =>
-                <Register />}
+              render={() => <Register />}
             >
               Register
             </Link>
             <Link
               onClick={this.toggleFragment}
-              className="btn btn--white btn--animated"
+              className="button button--white button--animated"
               to={"/app/chat"}
             >
               Chat

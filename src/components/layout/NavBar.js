@@ -1,38 +1,54 @@
 import React from "react";
+import "./NavBar.css";
 
 class Navbar extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
-          globeTrotter
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item float-right">
-              <a
-                className="nav-link"
-                target="_blank"
-                href="https://github.com/seppar93/globeTrotter"
-              >
-                Github
+      <div className="navigation">
+        <input
+          type="checkbox"
+          className="navigation__checkbox"
+          id="navi-toggle"
+        />
+        <label htmlFor="navi-toggle" className="navigation__button">
+          <span className="navigation__icon">&nbsp;</span>
+        </label>
+        <div className="navigation__background">&nbsp;</div>
+        <nav className="navigation__nav">
+          <ul className="navigation__list">
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>01</span>
+                Test
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>02</span>
+                Test
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>03</span>
+                Test
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>04</span>
+                Test
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>05</span>
+                Test
               </a>
             </li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
     );
   }
 }

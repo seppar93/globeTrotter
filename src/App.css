@@ -132,8 +132,8 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
+.button:link,
+.button:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -143,19 +143,19 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-.btn:hover {
+.button:hover {
   transform: translateY(-3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-.btn:active {
+.button:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-.btn--white {
+.button--white {
   background-color: #ffffff;
   color: #777;
 }
-.btn::after {
+.button::after {
   content: ""; /* you have to specficy*/
   display: inline-block;
   height: 100%;
@@ -167,15 +167,15 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-.btn--white::after {
+.button--white::after {
   background-color: #ffffff;
 }
-.btn:hover::after {
+.button:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
 
-.btn--animated {
+.button--animated {
   animation: moveInBottom 0.5s ease-in-out 0.75s;
   animation-fill-mode: backwards;
 }
