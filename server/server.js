@@ -9,8 +9,7 @@ const app = express()
 const PORT = 8080
 // Route requires
 const user = require('./routes/user')
-
-// MIDDLEWARE
+ // MIDDLEWARE
 app.use(morgan('dev'))
 app.use(
 	bodyParser.urlencoded({
@@ -18,8 +17,7 @@ app.use(
 	})
 )
 app.use(bodyParser.json())
-
-// Sessions
+ // Sessions
 app.use(
 	session({
 		secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
@@ -28,16 +26,12 @@ app.use(
 		saveUninitialized: false //required
 	})
 )
-
-// Passport
+ // Passport
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
-
-
-// Routes
+ // Routes
 app.use('/user', user)
-
-// Starting Server 
+ // Starting Server 
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`)
 })
