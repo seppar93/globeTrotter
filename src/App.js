@@ -108,14 +108,14 @@ class App extends Component {
               Chat
             </Link>
 
-            {/* <Link
+            <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
-              to={"/contacs"}
+              to={"/app/contacs"}
               render={() => <Contacts />}
             >
               Contacts
-            </Link> */}
+            </Link>
           </div>
         </header>
       </React.Fragment>
