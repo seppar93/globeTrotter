@@ -1,8 +1,8 @@
-import "./Chat.css";
 import React from "react";
 import ChatBox from "./ChatBox";
 import GifBox from "./GifBox";
 import Message from "./Message";
+import "./Chat.css";
 
 class Messages extends React.Component {
   constructor(props) {

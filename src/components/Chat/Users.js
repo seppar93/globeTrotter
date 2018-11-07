@@ -1,5 +1,5 @@
-import "./Chat.css";
 import React from "react";
+import "./Chat.css";
 
 class Users extends React.Component {
   constructor(props) {

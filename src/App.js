@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./App.css";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 // import "./App.css";
@@ -9,7 +9,7 @@ import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
 import Navbar from "./components/layout/NavBar";
 // import Register from "./components/auth/Register.js";
-import "./App.css";
+// import "./App.css";
 import Contacts from "./components/contacts/Contacts.js";
 
 class App extends Component {
