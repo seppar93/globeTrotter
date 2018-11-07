@@ -1,7 +1,7 @@
+import "./Chat.css";
 import React from "react";
 import axios from "axios";
 import $ from "jquery";
-import "./Chat.css";
 
 class GifBox extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
-import React from "react";
 import "./Chat.css";
+import React from "react";
 
 class EnterChat extends React.Component {
   constructor(props) {

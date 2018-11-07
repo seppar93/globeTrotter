@@ -1,10 +1,11 @@
+import "./Chat.css";
 import React from "react";
 import Users from "./Users";
 import Messages from "./Messages";
 import EnterChat from "./EnterChat";
 import socketIOClient from "socket.io-client";
 import NavBar from "../layout/NavBar.js";
-import "./Chat.css";
+// import "./Chat.css";
 
 class Chat extends React.Component {
   constructor(props) {
