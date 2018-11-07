@@ -70,11 +70,8 @@ class App extends Component {
           </div>
           <div className="header__text-box">
             <h1 className="heading-primary">
-              <span className="heading-primary--main">Travel</span>
-              <span className="heading-primary--sub">
-                {" "}
-                is where life happens
-              </span>
+              <span className="heading-primary--main">globeTrotter</span>
+              <span className="heading-primary--sub"> where life happens</span>
             </h1>
             <Route exact path="/" component={Home} />
             {/* <Route

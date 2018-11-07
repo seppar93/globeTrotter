@@ -1,5 +1,8 @@
 import React from "react";
 import "./NavBar.css";
+import Home from "../auth/index.js";
+import App from "../../App";
+import { Route, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
@@ -17,34 +20,44 @@ class Navbar extends React.Component {
         <nav className="navigation__nav">
           <ul className="navigation__list">
             <li className="navigation__item">
-              <a href="#" className="navigation__link">
-                <span>01</span>
-                Test
-              </a>
+              <Link
+                onClick={this.toggleFragment}
+                className="navigation__link"
+                to={"/"}
+                render={() => <App />}
+              >
+                Home
+              </Link>
             </li>
             <li className="navigation__item">
-              <a href="#" className="navigation__link">
-                <span>02</span>
-                Test
-              </a>
+              <Link
+                onClick={this.toggleFragment}
+                className="navigation__link"
+                to={"/app/user"}
+                render={() => <App />}
+              >
+                Account
+              </Link>
             </li>
             <li className="navigation__item">
-              <a href="#" className="navigation__link">
-                <span>03</span>
-                Test
-              </a>
+              <Link
+                onClick={this.toggleFragment}
+                className="navigation__link"
+                to={"/app/contacts"}
+                render={() => <App />}
+              >
+                Contacts
+              </Link>
             </li>
             <li className="navigation__item">
-              <a href="#" className="navigation__link">
-                <span>04</span>
-                Test
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="#" className="navigation__link">
-                <span>05</span>
-                Test
-              </a>
+              <Link
+                onClick={this.toggleFragment}
+                className="navigation__link"
+                to={"/app/contacts"}
+                render={() => <App />}
+              >
+                Logout
+              </Link>
             </li>
           </ul>
         </nav>
