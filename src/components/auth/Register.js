@@ -56,7 +56,7 @@ class Register extends Component {
           <div className="card">
             <div className="card-body">
               <h1 className="text-center pb-4 pt-3">
-                <span className="text-primary">
+                <span className="text-success">
                   <i className="fas fa-lock" /> Register
                 </span>
               </h1>
@@ -88,7 +88,7 @@ class Register extends Component {
                 <input
                   type="submit"
                   value="Register"
-                  className="btn btn-primary btn-block"
+                  className="btn btn-success btn-block"
                   onClick={this.handleSubmit}
                 />
               </form>

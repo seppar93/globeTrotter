@@ -1,72 +1,72 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import Navbar from "../layout/NavBar";
 
 class Login extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       redirectTo: null
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
-    })
+    });
   }
 
   handleSubmit(event) {
-    event.preventDefault()
-    console.log('handleSubmit')
-    console.log(this.state.username)
-    console.log(this.state.password)
-
+    event.preventDefault();
+    console.log("handleSubmit");
+    console.log(this.state.username);
+    console.log(this.state.password);
 
     axios
-      .post('/user/login', {
+      .post("/user/login", {
         username: this.state.username,
-        password: this.state.password,
+        password: this.state.password
       })
       .then(response => {
-        console.log('login response: ')
-        console.log(response)
+        console.log("login response: ");
+        console.log(response);
         if (response.status === 200) {
           // update App.js state
           this.props.updateUser({
             loggedIn: true,
             username: response.data.username
-          })
+          });
           // update the state to redirect to home
           this.setState({
-            redirectTo: '/'
-          })
+            redirectTo: "/"
+          });
         }
-      }).catch(error => {
-        console.log('login error: ')
-        console.log(error);
-
       })
+      .catch(error => {
+        console.log("login error: ");
+        console.log(error);
+      });
   }
 
   render() {
     if (this.state.redirectTo) {
-      return <Redirect to={{ pathname: this.state.redirectTo }} />
+      return <Redirect to={{ pathname: this.state.redirectTo }} />;
     } else {
       return (
         <div className="row">
+          <Navbar />
           <div className="col-md-6 mx-auto">
             <div className="card">
               <div className="card-body">
                 <h1 className="text-center pb-4 pt-3">
-                  <span className="text-primary">
+                  <span className="text-success">
                     <i className="fas fa-lock" /> Login
-                </span>
+                  </span>
                 </h1>
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group">
@@ -96,7 +96,7 @@ class Login extends Component {
                   <input
                     type="submit"
                     value="Login"
-                    className="btn btn-primary btn-block"
+                    className="btn btn-success btn-block"
                     onClick={this.handleSubmit}
                   />
                 </form>

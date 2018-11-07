@@ -57,12 +57,12 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
         {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {/* {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         } } */}
-        <Navbar />
 
         <header className="header">
           <div className="header__logo-box">
