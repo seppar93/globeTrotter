@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
-// import Navbar from "./components/layout/NavBar.js";
 import ChatBox from "./components/Chat/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
 import Navbar from "./components/layout/NavBar";
-// import Navbar from "./components/layout/NavBar.js";
-// import ChatBox from "./components/Chat/ChatBox";
 // import Register from "./components/auth/Register.js";
+
+import Contacts from "./components/contacts/Contacts.js";
 
 class App extends Component {
   constructor() {
@@ -58,6 +57,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
+        <Contacts />
         {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {/* {this.state.loggedIn &&
@@ -105,6 +105,15 @@ class App extends Component {
             >
               Chat
             </Link>
+
+            {/* <Link
+              onClick={this.toggleFragment}
+              className="button button--white button--animated"
+              to={"/contacs"}
+              render={() => <Contacts />}
+            >
+              Contacts
+            </Link> */}
           </div>
         </header>
       </React.Fragment>
