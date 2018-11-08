@@ -18,7 +18,7 @@ ReactDOM.render(
       <Route path="/App/ChatBox" component={ChatBox} />
       <Route path="/App/Register" component={Register} />
       <Route path="/App/Login" component={Login} />
-      {/* <Route path="/App/Contacts" component={Contacts} /> */}
+      <Route path="/App/Contacts" component={Contacts} />
       <Route path="/App/User" component={User} />
     </div>
   </Router>,

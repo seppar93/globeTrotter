@@ -65,7 +65,6 @@ class App extends Component {
         {/* {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         } } */}
-
         <header className="header">
           <div className="header__logo-box">
             {/* <img src="img/logo-white.png" alt="Logo" class="header__logo" /> */}
@@ -109,14 +108,14 @@ class App extends Component {
               Chat
             </Link>
 
-            {/* <Link
+            <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/contacts"}
               render={() => <Contacts />}
             >
               Contacts
-            </Link> */}
+            </Link>
 
             <Link
               onClick={this.toggleFragment}
