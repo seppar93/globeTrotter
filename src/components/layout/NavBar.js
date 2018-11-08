@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.css";
 import Home from "../auth/index.js";
 import App from "../../App";
+import User from "../user/User";
 import { Route, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
@@ -34,7 +35,7 @@ class Navbar extends React.Component {
                 onClick={this.toggleFragment}
                 className="navigation__link"
                 to={"/app/user"}
-                render={() => <App />}
+                render={() => <User />}
               >
                 Account
               </Link>
@@ -53,7 +54,7 @@ class Navbar extends React.Component {
               <Link
                 onClick={this.toggleFragment}
                 className="navigation__link"
-                to={"/app/contacts"}
+                to={"/app"}
                 render={() => <App />}
               >
                 Logout
