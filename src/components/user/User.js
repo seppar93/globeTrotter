@@ -5,9 +5,9 @@ import MapContainer from "../googleAPI/Map.js"
 class App extends Component {
   constructor() {
     super();
-    this.routeChange = this.routeChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
      }
-     routeChange(){
+     handleSubmit(){
       let path = `app/chat`;
       this.props.history.push(path);
       }
