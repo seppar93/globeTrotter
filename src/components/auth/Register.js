@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
 import axios from "axios";
 import API from "../../utilis/API";
 import Navbar from "../layout/NavBar";
+import { Redirect } from 'react-router-dom';
 
 class Register extends Component {
   constructor() {
@@ -34,10 +36,8 @@ class Register extends Component {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful signup");
-          this.setState({
-            //redirect to login page
-            redirectTo: "/app/login"
-          });
+          let path = `/app/Login`;
+          this.props.history.push(path);
         } else {
           console.log("username already taken");
         }
@@ -89,7 +89,7 @@ class Register extends Component {
                   type="submit"
                   value="Register"
                   className="btn btn-success btn-block"
-                  onClick={this.handleSubmit}
+                  onClick={this.handleSubmit}      
                 />
               </form>
             </div>

@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import "./User.css";
 import Navbar from "../layout/NavBar";
-
+import MapContainer from "../googleAPI/Map.js"
 class App extends Component {
+  constructor() {
+    super();
+    this.routeChange = this.routeChange.bind(this);
+     }
+     routeChange(){
+      let path = `app/chat`;
+      this.props.history.push(path);
+      }
   render() {
     return (
       <div>
@@ -70,17 +78,23 @@ class App extends Component {
                     <div className="hr hr-8 dotted" />
                     <div className="profile-user-info">
                       <div className="profile-info-row">
-                        <div className="profile-info-name"> Chat </div>
+                        <div className="profile-info-name">CHAT</div>
                         <div className="profile-info-value">
-                          {"CHAT BUTTON"}
+                        <input
+                          type="submit"
+                          value="Chat"
+                          className="btn btn-success btn-block col-1"
+                          onClick={this.handleSubmit}
+                        />
                         </div>
                       </div>
                     </div>
+                 
                   </div>
                 </div>
                 <div className="space-20" />
                 <div className="row">
-                  <div className="col-xs-12 col-sm-6">
+                  <div className="col-xs-12 col-sm-3">
                     <div className="widget-box transparent">
                       <div className="widget-header widget-header-small">
                         <h4 className="widget-title smaller">
@@ -107,6 +121,14 @@ class App extends Component {
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div className="mapClass">
+                      <MapContainer className="mapClass"/>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs-12 col-sm-3">
+                  {/* <Calendar /> Calendar goes here */ }
                   </div>
                 </div>
               </div>

@@ -26,7 +26,6 @@ class Login extends Component {
     console.log("handleSubmit");
     console.log(this.state.username);
     console.log(this.state.password);
-
     axios
       .post("/user/login", {
         username: this.state.username,
@@ -41,16 +40,14 @@ class Login extends Component {
             loggedIn: true,
             username: response.data.username
           });
-          // update the state to redirect to home
-          this.setState({
-            redirectTo: "/"
-          });
         }
       })
       .catch(error => {
         console.log("login error: ");
         console.log(error);
       });
+      let path = `/app/user`;
+      this.props.history.push(path);
   }
 
   render() {
