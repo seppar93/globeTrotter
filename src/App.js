@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 // import "./App.css";
-import ChatBox from "./components/chat/ChatBox";
+import Chat from "./components/chat/Chat";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
@@ -103,7 +103,7 @@ class App extends Component {
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/chat"}
-              render={() => <ChatBox />}
+              render={() => <Chat />}
             >
               Chat
             </Link>
