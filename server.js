@@ -1,5 +1,6 @@
 const express = require("express");
  const bodyParser = require('body-parser')
+ const path = require("path");
 const morgan = require('morgan')
 const session = require('express-session')
 const dbConnection = require('./database') 
@@ -26,6 +27,29 @@ app.use(express.json());
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/globeTrotter"
 );
+
+app.use(morgan("tiny")); // logging framework
+
+// Serve our api message
+app.get("/api/message", async (req, res, next) => {
+  try {
+    res.status(201).json({ message: "HELLOOOOO FROM EXPRESS" });
+  } catch (err) {
+    next(err);
+  }
+});
+
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets
+  app.use(express.static("build"));
+
+  // Express will serve up the front-end index.html file if it doesn't recognize the route
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve("build", "index.html"))
+  );
+}
+
+
 // Sessions
 app.use(
 	session({

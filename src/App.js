@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
+import logo from "./logo.svg";
 import { Route, Link } from "react-router-dom";
 // import "./App.css";
 import Chat from "./components/chat/Chat";
@@ -14,6 +15,29 @@ import User from "./components/user/User.js";
 import Contacts from "./components/contacts/Contacts.js";
 
 class App extends Component {
+
+  //heroku code
+
+  state = {
+    message: "",
+    error: "",
+    eee: "",
+    text: ""
+  };
+
+  componentDidMount = () => this.fetchAPIMessage();
+
+  fetchAPIMessage = async () => {
+    try {
+      const res = await fetch(`/api/message`);
+      const { message } = await res.json();
+      this.setState({ message });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+
   constructor() {
     super();
     this.state = {
@@ -126,6 +150,13 @@ class App extends Component {
               User
             </Link>
           </div>
+          <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>WELCOME CREATE REACT APP!</p>
+        <div className="App-link">{this.state.message}</div>
+      </header>
+    </div>
         </header>
       </React.Fragment>
     );
