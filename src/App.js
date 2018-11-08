@@ -3,11 +3,12 @@ import "./App.css";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 // import "./App.css";
-import ChatBox from "./components/Chat/ChatBox";
+import ChatBox from "./components/chat/ChatBox";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
 import Navbar from "./components/layout/NavBar";
+import User from "./components/user/User.js";
 // import Register from "./components/auth/Register.js";
 // import "./App.css";
 import Contacts from "./components/contacts/Contacts.js";
@@ -108,13 +109,22 @@ class App extends Component {
               Chat
             </Link>
 
-            <Link
+            {/* <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
-              to={"/app/contacs"}
+              to={"/app/contacts"}
               render={() => <Contacts />}
             >
               Contacts
+            </Link> */}
+
+            <Link
+              onClick={this.toggleFragment}
+              className="button button--white button--animated"
+              to={"/app/user"}
+              render={() => <User />}
+            >
+              User
             </Link>
           </div>
         </header>
