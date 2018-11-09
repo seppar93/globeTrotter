@@ -154,7 +154,11 @@ class App extends Component {
                   </div>
                 </div>
               </div>
+
               <Budget />
+              {/* <div className="mapClass">
+                <MapContainer className="mapClass" />
+              </div> */}
             </div>
           </form>
         </div>
