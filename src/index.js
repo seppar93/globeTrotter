@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-//import Chat from "./components/chat/Chat.js";
+import Chat from "./components/Chat/Chat.js";
 import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 import Contacts from "./components/contacts/Contacts";
@@ -15,7 +15,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={App} />
-      {/* <Route path="/App/Chat" component={Chat} /> */}
+      <Route path="/App/Chat" component={Chat} />
       <Route path="/App/Register" component={Register} />
       <Route path="/App/Login" component={Login} />
       <Route path="/App/Contacts" component={Contacts} />

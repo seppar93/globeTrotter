@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./App.css";
+
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
-// import "./App.css";
-//import Chat from "./components/chat/Chat";
+import "./App.css";
+import Chat from "./components/Chat/Chat";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
@@ -12,6 +12,7 @@ import User from "./components/user/User.js";
 // import Register from "./components/auth/Register.js";
 // import "./App.css";
 import Contacts from "./components/contacts/Contacts.js";
+// import UserForm from "./components/user/UserForm.js";
 
 class App extends Component {
   constructor() {
@@ -57,8 +58,9 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="body">
         <Navbar />
+        {/* <UserForm /> */}
         {/* <Contacts /> */}
         {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
@@ -99,14 +101,14 @@ class App extends Component {
             >
               Register
             </Link>
-            {/* <Link
+            <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/chat"}
               render={() => <Chat />}
             >
               Chat
-            </Link> */}
+            </Link>
 
             <Link
               onClick={this.toggleFragment}
@@ -127,7 +129,7 @@ class App extends Component {
             </Link>
           </div>
         </header>
-      </React.Fragment>
+      </div>
     );
   }
 }

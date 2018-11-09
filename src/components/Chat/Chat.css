@@ -6,6 +6,7 @@ body {
   width: 100%;
   margin: 0px;
   padding: 0px;
+  /* font-size: 100%; */
 }
 
 #root {
@@ -13,12 +14,14 @@ body {
   height: 100%;
   width: 100%;
   padding-top: 56px;
+  font-size: 20px;
 }
 #root .enter-chat {
   display: block;
   position: relative;
   height: 100%;
   width: 100%;
+  font-size: 0px;
 }
 #root .chat {
   display: block;
@@ -54,28 +57,36 @@ body {
   display: inline-block;
   float: left;
   margin-right: 10px;
+  font-size: 30px;
 }
 #root .chat .messages .no-message {
   margin: 10px;
+  font-size: 20px;
 }
 #root .chat .chatbox,
 #root .chat .gifbox {
   position: fixed;
   bottom: 0px;
   padding: 0px;
+  font-size: 80%;
+  font-size: 50px;
 }
 #root .chat .gifbox {
   height: 200px;
   width: 100%;
   border-left: 1px solid #e9ebee;
+  font-size: 50px;
 }
 #root .chat .gifbox .input-group {
   padding: 0px;
+  font-size: 50px;
+  size: 20px;
 }
 #root .chat .gifbox .gifs {
   height: 160px !important;
   overflow-y: scroll;
   padding: 5px;
+  font-size: 50px;
 }
 #root .chat .gifbox .gifs .gif {
   position: relative;
@@ -83,9 +94,11 @@ body {
   float: left;
   margin-right: 5px;
   padding-bottom: 5px;
+  font-size: 50px;
 }
 #root .chat .gifbox .gifs .gif:hover .share {
   display: block;
+  font-size: 50px;
 }
 #root .chat .gifbox .gifs .gif .share {
   position: absolute;
@@ -100,9 +113,22 @@ body {
   cursor: pointer;
   color: white;
   display: none;
+  font-size: 50px;
 }
 #root .chat .gifbox .gifs .searching {
   display: block;
   color: grey;
-  font-size: 18px;
+  font-size: 50px;
+}
+.messages {
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 131, 0.8)
+  );
+  border-style: solid;
+}
+
+.users {
+  border: 10px black;
 }

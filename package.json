@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apexcharts": "^2.2.0",
     "axios": "^0.16.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
@@ -20,7 +21,9 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.5.2",
+    "react-apexcharts": "^1.0.10",
     "react-dom": "^16.5.2",
+    "react-radial-bar-chart": "^0.1.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
