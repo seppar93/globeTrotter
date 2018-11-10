@@ -10,6 +10,7 @@ import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 import Contacts from "./components/contacts/Contacts";
 import User from "./components/user/User.js";
+import UserForm from "./components/user/UserForm";
 
 ReactDOM.render(
   <Router>
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="/App/Login" component={Login} />
       <Route path="/App/Contacts" component={Contacts} />
       <Route path="/App/User" component={User} />
+      <Route path="/App/UserForm" component={UserForm} />
     </div>
   </Router>,
   document.getElementById("root")

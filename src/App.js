@@ -101,32 +101,32 @@ class App extends Component {
             >
               Register
             </Link>
-            <Link
+            {/* <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/chat"}
               render={() => <Chat />}
             >
               Chat
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/contacts"}
               render={() => <Contacts />}
             >
               Contacts
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               onClick={this.toggleFragment}
               className="button button--white button--animated"
               to={"/app/user"}
               render={() => <User />}
             >
               User
-            </Link>
+            </Link> */}
           </div>
         </header>
       </div>

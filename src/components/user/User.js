@@ -3,6 +3,10 @@ import "./User.css";
 import Navbar from "../layout/NavBar";
 import MapContainer from "../googleAPI/Map.js";
 import Budget from "./Budget.js";
+// import I01d from "../../profilePic";
+import { Route, Link } from "react-router-dom";
+import Contacts from "../contacts/Contacts";
+
 class App extends Component {
   constructor() {
     super();
@@ -12,6 +16,14 @@ class App extends Component {
     let path = `app/chat`;
     this.props.history.push(path);
   }
+  // getWeatherIconImage(icon) {
+  //   switch (icon) {
+  //     case "01d":
+  //       return I01d;
+  //     default:
+  //       break;
+  //   }
+  // }
   render() {
     return (
       <div className="outside">
@@ -21,20 +33,17 @@ class App extends Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="profile-img">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                    alt="profile"
-                  />
+                  <img alt="profile" />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="profile-head">
-                  <h5>JOHN DOE</h5>
+                  <h3>Sepehr Parirokh</h3>
                   {/* TODO: adding location form UserForm */}
-                  <i class="fas fa-map-marker-alt"> LOCATION </i>
+                  <i class="fas fa-map-marker-alt"> Toronto </i>
                   <ul className="nav nav-tabs" id="myTab" role="tablist">
                     <li className="nav-item">
-                      <p className="nav-link ">About</p>
+                      <h3 className="nav-link ">About:</h3>
                     </li>
                   </ul>
                 </div>
@@ -61,7 +70,7 @@ class App extends Component {
                       </div>
                       <div className="col-md-6">
                         {/* TODO: adding inforamtion from forgroup */}
-                        <i> 32 </i>
+                        <i> 25 </i>
                       </div>
                     </div>
                     <div className="row">
@@ -70,7 +79,7 @@ class App extends Component {
                       </div>
                       <div className="col-md-6">
                         {/* TODO: adding inforamtion from forgroup */}
-                        <i class="fas fa-map-marked-alt"> Dubai</i>
+                        <i class="fas fa-map-marked-alt"> Tokyo</i>
                       </div>
                     </div>
                     <div className="row">
@@ -78,7 +87,7 @@ class App extends Component {
                         <label>Departure:</label>
                       </div>
                       <div className="col-md-6">
-                        <i class="fas fa-plane-departure"> 2018-12-25</i>
+                        <i class="fas fa-plane-departure"> 2019-01-25</i>
                       </div>
                     </div>
                     <div className="row">
@@ -86,7 +95,7 @@ class App extends Component {
                         <label>Arrival:</label>
                       </div>
                       <div className="col-md-6">
-                        <i class="fas fa-plane-arrival">2018-12-25</i>
+                        <i class="fas fa-plane-arrival">2019-01-06</i>
                       </div>
                     </div>
                     <div className="row">
@@ -97,60 +106,14 @@ class App extends Component {
                         <i class="fas fa-dollar-sign">10,000</i>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    className="tab-pane fade"
-                    id="profile"
-                    role="tabpanel"
-                    aria-labelledby="profile-tab"
-                  >
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label>Experience</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p>Expert</p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label>Hourly Rate</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p>10$/hr</p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label>Total Projects</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p>230</p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label>English Level</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p>Expert</p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <label>Availability</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p>6 months</p>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-12">
-                        <label>Your Bio</label>
-                        <br />
-                        <p>Your detail description</p>
-                      </div>
-                    </div>
+                    <Link
+                      onClick={this.toggleFragment}
+                      className="button button--white button--animated"
+                      to={"/app/contacts"}
+                      render={() => <Contacts />}
+                    >
+                      Chat with travelers
+                    </Link>
                   </div>
                 </div>
               </div>

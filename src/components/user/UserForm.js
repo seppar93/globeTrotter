@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Route, Link } from "react-router-dom";
+import User from "./User";
 
 class UserForm extends Component {
   state = {
@@ -11,6 +13,10 @@ class UserForm extends Component {
     arrival: "",
     budget: ""
   };
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  // onSubmit = e => {
+  //   e.preventDefault();
+  // };
 
   render() {
     const {
@@ -26,7 +32,7 @@ class UserForm extends Component {
       <div className="card mb-3">
         <div className="card-header bg-success text-center">
           {" "}
-          User Information{" "}
+          Please input your information{" "}
         </div>
         <div className="card-body">
           <form>
@@ -38,6 +44,7 @@ class UserForm extends Component {
                 className="form-control form-control-lg"
                 placeholder="Enter Name"
                 value={name}
+                onChange={this.onChange}
               />
             </div>
 
@@ -49,10 +56,12 @@ class UserForm extends Component {
                 className="form-control form-control-lg"
                 placeholder="Enter Age"
                 value={age}
+                onChange={this.onChange}
               />
             </div>
 
             <div className="form-group">
+              <i class="fas fa-map-marker-alt" />
               <label htmlFor="location"> Location </label>
               <input
                 type="text"
@@ -60,10 +69,12 @@ class UserForm extends Component {
                 className="form-control form-control-lg"
                 placeholder="Enter Your Location"
                 value={location}
+                onChange={this.onChange}
               />
             </div>
 
             <div className="form-group">
+              <i class="fas fa-map-marked-alt" />
               <label htmlFor="destination"> Destination </label>
               <input
                 type="text"
@@ -75,6 +86,7 @@ class UserForm extends Component {
             </div>
 
             <div className="form-group">
+              <i class="fas fa-plane-departure" />
               <label htmlFor="departure"> Departure </label>
               <input
                 type="date"
@@ -87,6 +99,7 @@ class UserForm extends Component {
             </div>
 
             <div className="form-group">
+              <i class="fas fa-plane-arrival" />
               <label htmlFor="arrival"> Arrival </label>
               <input
                 type="date"
@@ -99,6 +112,7 @@ class UserForm extends Component {
             </div>
 
             <div className="form-group">
+              <i class="fas fa-dollar-sign" />
               <label htmlFor="budget"> Budget </label>
               <input
                 type="number"
@@ -109,11 +123,19 @@ class UserForm extends Component {
               />
             </div>
 
-            <input
+            {/* <input
               type="submit"
               value="Submit"
               className="btn btn-success btn-block"
-            />
+            /> */}
+            <Link
+              onClick={this.toggleFragment}
+              className="btn btn-success btn-block"
+              to={"/app/user"}
+              render={() => <User />}
+            >
+              Submit
+            </Link>
           </form>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Home from "../auth/index.js";
 import App from "../../App";
 import User from "../user/User";
 import { Route, Link } from "react-router-dom";
+import Contacts from "../contacts/Contacts";
 
 class Navbar extends React.Component {
   render() {
@@ -37,7 +38,7 @@ class Navbar extends React.Component {
                 to={"/app/user"}
                 render={() => <User />}
               >
-                Account
+                Acount
               </Link>
             </li>
             <li className="navigation__item">
@@ -45,7 +46,7 @@ class Navbar extends React.Component {
                 onClick={this.toggleFragment}
                 className="navigation__link"
                 to={"/app/contacts"}
-                render={() => <App />}
+                render={() => <Contacts />}
               >
                 Contacts
               </Link>
@@ -54,7 +55,7 @@ class Navbar extends React.Component {
               <Link
                 onClick={this.toggleFragment}
                 className="navigation__link"
-                to={"/app"}
+                to={"/"}
                 render={() => <App />}
               >
                 Logout

@@ -3,7 +3,8 @@ import { Route, Link } from "react-router-dom";
 import axios from "axios";
 import API from "../../utilis/API";
 import Navbar from "../layout/NavBar";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
+import UserForm from "../user/UserForm";
 
 class Register extends Component {
   constructor() {
@@ -85,12 +86,14 @@ class Register extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <input
-                  type="submit"
-                  value="Register"
+                <Link
+                  onClick={this.toggleFragment}
                   className="btn btn-success btn-block"
-                  onClick={this.handleSubmit}      
-                />
+                  to={"/app/userForm"}
+                  render={() => <UserForm />}
+                >
+                  Chat
+                </Link>
               </form>
             </div>
           </div>
