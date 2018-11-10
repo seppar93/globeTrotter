@@ -11,6 +11,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.socket = null;
+    console.log(localStorage.getItem("username"));
     this.state = {
       username: localStorage.getItem("username")
         ? localStorage.getItem("username")
