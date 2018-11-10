@@ -102,3 +102,9 @@
   border: 5px solid black;
   background: rgb(175, 187, 164, 0.4);
 }
+
+.button {
+  float: right;
+  top: -270px;
+  right: 170px;
+}
