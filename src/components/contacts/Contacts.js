@@ -7,21 +7,30 @@ class Contacts extends Component {
     contacts: [
       {
         id: 1,
-        name: "henery johns",
-        email: "henery59@gmail.com",
-        phone: "12345"
+        name: "Johnny Neagoe",
+        age: "25",
+        destination: "Dublin",
+        departure: "2019-08-12",
+        arrival: "2019-08-20",
+        budget: "10000"
       },
       {
         id: 2,
-        name: "babaanoosh",
-        email: "hentilover59@gmail.com",
-        phone: "12345"
+        name: "Harsh Ratna",
+        age: "32",
+        destination: "Vienna",
+        departure: "2018-11-27",
+        arrival: "2018-12-05",
+        budget: "5000"
       },
       {
         id: 3,
-        name: "bob dole",
-        email: "analfister59@gmail.com",
-        phone: "12345"
+        name: "Ernst Logan",
+        age: "25",
+        destination: "Toronto",
+        departure: "2019-04-26",
+        arrival: "2019-05-26",
+        budget: "17520"
       }
     ]
   };
