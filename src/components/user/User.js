@@ -3,7 +3,7 @@ import "./User.css";
 import Navbar from "../layout/NavBar";
 import MapContainer from "../googleAPI/Map.js";
 import Budget from "./Budget.js";
-// import I01d from "../../profilePic";
+import I01d from "../../profilePic.jpg";
 import { Link } from "react-router-dom";
 import Contacts from "../contacts/Contacts";
 
@@ -33,7 +33,7 @@ class App extends Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="profile-img">
-                  <img alt="profile" />
+                  <img src={I01d} alt="profile" />
                 </div>
               </div>
               <div className="col-md-6">
@@ -52,8 +52,8 @@ class App extends Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="profile-work">
-                  <p> ADD MAP</p>
-                  <p> ADD CALANDER</p>
+                  {/* <p> ADD MAP</p> */}
+                  {/* <p> ADD CALANDER</p> */}
                 </div>
               </div>
               <div className="col-md-8">
@@ -79,7 +79,7 @@ class App extends Component {
                       </div>
                       <div className="col-md-6">
                         {/* TODO: adding inforamtion from forgroup */}
-                        <i class="fas fa-map-marked-alt"> Tokyo</i>
+                        <i class="fas fa-map-marked-alt"> San Fransisco</i>
                       </div>
                     </div>
                     <div className="row">
@@ -95,7 +95,7 @@ class App extends Component {
                         <label>Arrival:</label>
                       </div>
                       <div className="col-md-6">
-                        <i class="fas fa-plane-arrival">2019-01-06</i>
+                        <i class="fas fa-plane-arrival">2019-02-06</i>
                       </div>
                     </div>
                     <div className="row">
@@ -108,7 +108,7 @@ class App extends Component {
                     </div>
                     <Link
                       onClick={this.toggleFragment}
-                      className="button button--white button--animated"
+                      className="chatBTN button button--white button--animated"
                       to={"/app/contacts"}
                       render={() => <Contacts />}
                     >

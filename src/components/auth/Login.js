@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../layout/NavBar";
+import Chat from "../Chat/Chat";
 
 class Login extends Component {
   constructor() {
@@ -44,8 +46,8 @@ class Login extends Component {
         console.log("login error: ");
         console.log(error);
       });
-      let path = `/app/user`;
-      this.props.history.push(path);
+    let path = `/app/user`;
+    this.props.history.push(path);
   }
 
   render() {
@@ -88,12 +90,14 @@ class Login extends Component {
                       onChange={this.handleChange}
                     />
                   </div>
-                  <input
-                    type="submit"
-                    value="Login"
+                  <Link
+                    onClick={this.toggleFragment}
                     className="btn btn-success btn-block"
-                    onClick={this.handleSubmit}
-                  />
+                    to={"/app/chat"}
+                    render={() => <Chat />}
+                  >
+                    Chat
+                  </Link>
                 </form>
               </div>
             </div>
