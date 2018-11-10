@@ -3,7 +3,7 @@ import "./Contacts";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Chat from "../Chat/Chat.js";
-import { Route, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import NavBar from "../layout/NavBar";
 
 class Contact extends Component {

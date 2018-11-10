@@ -4,7 +4,7 @@ import Navbar from "../layout/NavBar";
 import MapContainer from "../googleAPI/Map.js";
 import Budget from "./Budget.js";
 // import I01d from "../../profilePic";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Contacts from "../contacts/Contacts";
 
 class App extends Component {

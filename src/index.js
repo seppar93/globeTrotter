@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Chat from "./components/Chat/Chat.js";
 import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";

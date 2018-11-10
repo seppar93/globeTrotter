@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import API from "../../utilis/API";
 import Navbar from "../layout/NavBar";
-import { Redirect } from "react-router-dom";
 import UserForm from "../user/UserForm";
 
 class Register extends Component {

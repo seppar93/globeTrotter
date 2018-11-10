@@ -3,15 +3,15 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-import Chat from "./components/Chat/Chat";
+//import Chat from "./components/Chat/Chat";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Home from "./components/auth/index.js";
 import Navbar from "./components/layout/NavBar";
-import User from "./components/user/User.js";
+//import User from "./components/user/User.js";
 // import Register from "./components/auth/Register.js";
 // import "./App.css";
-import Contacts from "./components/contacts/Contacts.js";
+//import Contacts from "./components/contacts/Contacts.js";
 // import UserForm from "./components/user/UserForm.js";
 
 class App extends Component {

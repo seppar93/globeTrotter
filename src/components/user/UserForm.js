@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import User from "./User";
 
 class UserForm extends Component {
@@ -82,6 +82,7 @@ class UserForm extends Component {
                 className="form-control form-control-lg"
                 placeholder="Enter Your Destination"
                 value={destination}
+                onChange={this.onChange}
               />
             </div>
 
@@ -120,6 +121,7 @@ class UserForm extends Component {
                 className="form-control form-control-lg"
                 placeholder="Enter your budget"
                 value={budget}
+                onChange={this.onChange}
               />
             </div>
 

@@ -1,9 +1,9 @@
 import React from "react";
 import "./NavBar.css";
-import Home from "../auth/index.js";
+//import Home from "../auth/index.js";
 import App from "../../App";
 import User from "../user/User";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Contacts from "../contacts/Contacts";
 
 class Navbar extends React.Component {
