@@ -1,14 +1,11 @@
 # globeTrotter
 
-A web application to find friends to travel with. Currently in production
+A web application to find friends to travel with based on the metrics of budget, destination, and schedule
 
 ## Motivation
 
-In production
+Finding the exact time for frinds to schudle time of and destinations that people wish to visit is often diffcult. I felt that  Having a web application that helps with the logstics of travel will give people more time to focus on what they enjoy.
 
-## Build status
-
-In production
 
 ## Code style
 
@@ -18,7 +15,7 @@ In production
 
 ### UI
 
-![](GlobeUIEnter.gif)
+![](NAVbar.gif)
 
 In production
 
@@ -37,15 +34,13 @@ In production
 
 ## Features
 
-In production
+Create your on user that focuses on the three metrics and chat wiht fellow travelers 
 
-## Code Example
 
-In production
 
 ## Installation
 
-In production
+Simply clone the project install the dependence and run a local host 
 
 ## API Reference
 
@@ -56,9 +51,6 @@ In production
 
 In production
 
-## How to use?
-
-In production
 
 ## Credits
 
